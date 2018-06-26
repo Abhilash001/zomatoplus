@@ -4,15 +4,62 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tbl_restaurant")
 public class Restaurant implements Serializable {
 
-	String name, address, website;
-	long contact;
-	int rating;
-	List<Items> items = new ArrayList<>();
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	@Column(name="city")
+	private String city;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="address")
+	private String address;
+	
+	@Column(name="contact")
+	private String contact;
+	
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="website")
+	private String website;
+	
+	@Column(name="like_count")
+	private Integer likeCount;
+	
+	/*@Column(name="items")
+	List<Items> items = new ArrayList<>();*/
 	
 	public Restaurant() {
 		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getName() {
@@ -31,6 +78,22 @@ public class Restaurant implements Serializable {
 		this.address = address;
 	}
 
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public String getWebsite() {
 		return website;
 	}
@@ -39,36 +102,13 @@ public class Restaurant implements Serializable {
 		this.website = website;
 	}
 
-	public long getContact() {
-		return contact;
+	public Integer getLikeCount() {
+		return likeCount;
 	}
 
-	public void setContact(long contact) {
-		this.contact = contact;
+	public void setLikeCount(Integer likeCount) {
+		this.likeCount = likeCount;
 	}
-
-	public int getRating() {
-		return rating;
-	}
-
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
-
-	public List<Items> getItems() {
-		return items;
-	}
-
-	public void setItems(List<Items> items) {
-		this.items = items;
-	}
-
-	/*@Override
-	public boolean equals(Object obj) {
-		Restaurant ob = (Restaurant)obj;
-		return (this.name==ob.name);
-	}
-	*/
 	
 	
 }

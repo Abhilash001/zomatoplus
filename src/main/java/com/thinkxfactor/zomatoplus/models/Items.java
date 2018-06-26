@@ -2,13 +2,50 @@ package com.thinkxfactor.zomatoplus.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tbl_items")
 public class Items implements Serializable {
 
-	String name, desc;
-	double price;
+	@Id
+	@GeneratedValue
+	private Long id;
+	
+	@Column(name="restaurant_id")
+	private Long restaurant_id;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="price")
+	private Double price;
 	
 	public Items() {
 		super();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getRestaurant_id() {
+		return restaurant_id;
+	}
+
+	public void setRestaurant_id(Long restaurant_id) {
+		this.restaurant_id = restaurant_id;
 	}
 
 	public String getName() {
@@ -19,22 +56,21 @@ public class Items implements Serializable {
 		this.name = name;
 	}
 
-	public String getDesc() {
-		return desc;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public double getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
 	
 	
 }
