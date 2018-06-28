@@ -1,5 +1,6 @@
 package com.thinkxfactor.zomatoplus.controller;
 
+
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.thinkxfactor.zomatoplus.models.*;
 import com.thinkxfactor.zomatoplus.repository.UserRepository;
 
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -20,7 +22,7 @@ public class UserController {
 	private UserRepository userRepository;
 	
 	@PostMapping("/login")
-	public String userLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
+	public Object userLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
 		User usr = userRepository.findByUsernameAndPassword(username, password);
 		if(usr==null)
 			return "Login failed";

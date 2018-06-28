@@ -42,4 +42,10 @@ public class RestaurantController {
 		return it;
 	}
 	
+	@GetMapping("/getAllItems")
+	public List<Items> itemsList() {
+		List<Items> items = itemsRepository.findAll();
+		return items;
+	}
+	
 }

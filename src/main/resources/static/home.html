@@ -1,0 +1,68 @@
+<div class="homepage">
+	<h3 align = "center">Welcome to ZomatoPlus</h3><br><br>
+	<div style="clear: both;">
+		<h4 class="modal-title">CREATE A NEW ACCOUNT</h4>
+		<h4 class="modal-title" style="float: right; padding-right: 280px;">LOG IN</h4>
+	</div><br>
+	<table class="table tablehome">
+  <tr>
+
+<form>
+    <td>
+      <form id="register-form" class="form-reg">
+		<div class="c-form-group c-has-success c-has-feedback">
+			<input class = "input input1" type="text" maxlength="20" placeholder="choose a username" ng-model="user.username"><br>
+			<input class = "input input1" type="password" placeholder="password" ng-model="user.password"><br>
+			<input class = "input input1" type="text" placeholder="name" ng-model="user.name"><br>
+			<input class = "input input1" type="text" placeholder="type" ng-model="user.type"><br>
+			<input class = "input input1" type="text" placeholder="mobile" ng-model="user.mobile"><br>
+			<input class = "input input1" type="text" placeholder="address" ng-model="user.address"><br>
+			<input class = "input input1" type="text" placeholder="landmark" ng-model="user.landmark"><br>
+			<input class = "input input1" type="number" maxlength="6" placeholder="pincode" ng-model="user.pincode"><br>
+			<button  tabindex="2" ng-click="saveUser()">Sign Up</button><br><br>
+		</div>
+	</form>
+    </td>
+</form>
+
+<form>
+  <td class="td td1">
+    <form id="register-login" class="login-reg">
+		<div class="c-form-group c-has-success c-has-feedback">
+			<input class = "input input2" type="text" maxlength="20" placeholder="enter username"><br><br>
+			<input class = "input input2" type="password" placeholder="enter password"><br>
+			<br><br>
+			<button type="submit" tabindex="2">Log in</button><br><br>
+		</div>
+	</form>
+  </td>
+</form>
+  </tr>
+
+</table>
+
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchUsers()">
+
+		<tr style="background-color: #8FBC8F">
+			<td><b>Username</b></td>
+			<td><b>Name</b></td>
+			<td><b>Type</b></td>
+			<td><b>Mobile</b></td>
+			<td><b>Address</b></td>
+			<td><b>Landmark</b></td>
+			<td><b>Pincode</b></td>
+		</tr>
+		<tr ng-repeat="user in users">
+			<td>{{user.username}}</td>
+			<td>{{user.name}}</td>
+			<td>{{user.type}}</td>
+			<td>{{user.mobile}}</td>
+			<td>{{user.address}}</td>
+			<td>{{user.landmark}}</td>
+			<td>{{user.pincode}}</td>
+		</tr>
+	</table>
+	
+<br><br><br><br><br><br><br><br>	
+</div>

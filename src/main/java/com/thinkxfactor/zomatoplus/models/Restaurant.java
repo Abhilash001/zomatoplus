@@ -1,8 +1,6 @@
 package com.thinkxfactor.zomatoplus.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,10 +36,7 @@ public class Restaurant implements Serializable {
 	
 	@Column(name="like_count")
 	private Integer likeCount;
-	
-	/*@Column(name="items")
-	List<Items> items = new ArrayList<>();*/
-	
+
 	public Restaurant() {
 		super();
 	}
